@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Евробетон — Производство и доставка бетона</title>
     <meta name="description" content="ООО «Евробетон» — качественный бетон от производителя. Производство. Реализация. Доставка. Иркутск.">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234bb462'/><text x='50' y='50' font-size='60' text-anchor='middle' dominant-baseline='central' fill='white'>Е</text></svg>">
+    
+    <!-- Фавикон (Завод зеленый) -->
+    <link rel="icon" type="image/svg+xml" href="image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath fill='%234bb462' d='M30.47 9.145H32v21.33h-1.53Zm0-7.62H25.9v7.62h1.53v-6.1h1.52v6.1h1.52zm-3.04 22.86h1.52v1.52h-1.52Zm0-6.1h1.52v1.52h-1.52Zm0-6.09h1.52v1.52h-1.52Zm-3.05 0h-3.05v1.52h3.05v16.76h1.52V9.145h-1.52zm-3.05-9.15h1.53v1.53h-1.53Z'/%3E%3Cpath fill='%234bb462' d='M19.81 18.285h3.05v3.05h-3.05Zm-1.53-16.76h3.05v1.52h-3.05Zm0 12.19h3.05v1.52h-3.05Zm-3.04 10.67h3.04v3.04h-3.04Zm0-9.15h3.04v1.53h-3.04Zm0-12.19h3.04v1.53h-3.04Zm-1.53-1.52h1.53v1.52h-1.53Zm0 10.67h-3.05v1.52h1.53v16.76h1.52v-12.19h1.53v-1.52h-1.53zm-4.57-6.1h1.52v1.52H9.14Zm-1.52 12.19h3.04v3.05H7.62Zm0-4.57h3.04v1.52H7.62Zm-1.53-9.14h3.05v1.52H6.09Zm-1.52 10.66h3.05v1.53H4.57Zm-1.52 9.15h3.04v3.04H3.05Zm0-18.29h3.04v1.52H3.05Zm-1.53 10.67h3.05v1.52H1.52Zm0-12.19h1.53v1.52H1.52ZM0 18.285h1.52v12.19H0Z'/%3E%3C/svg%3E">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
+        /* ===== БАЗОВЫЕ СТИЛИ ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
@@ -22,6 +27,7 @@
         img { max-width: 100%; height: auto; display: block; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         
+        /* ===== КНОПКИ ===== */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -42,16 +48,6 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(75, 180, 98, 0.4);
         }
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #4bb462;
-            color: #4bb462;
-            box-shadow: none;
-        }
-        .btn-outline:hover {
-            background: #4bb462;
-            color: #000;
-        }
         
         .section { padding: 80px 0; }
         .section-dark { background: #292929; color: #fff; }
@@ -60,13 +56,14 @@
         .mb-30 { margin-bottom: 30px; }
         .mb-50 { margin-bottom: 50px; }
 
+        /* ===== ШАПКА ===== */
         header {
             background: #292929;
             color: #fff;
             padding: 12px 0;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
         .header-inner {
@@ -77,193 +74,92 @@
             gap: 15px;
         }
         .logo-wrapper { display: flex; flex-direction: column; gap: 2px; }
-        .logo { 
-            font-size: 1.5rem; 
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            color: #fff;
-        }
+        .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: 0.5px; color: #fff; }
         .logo span { color: #4bb462; }
-        .logo-tagline {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.7);
-            font-weight: 500;
-        }
+        .logo-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.7); font-weight: 500; }
         .header-phone {
-            color: #000;
-            font-weight: 700;
-            padding: 10px 20px;
-            background: #4bb462;
-            border-radius: 8px;
-            transition: all 0.2s;
-            white-space: nowrap;
+            color: #000; font-weight: 700; padding: 10px 20px;
+            background: #4bb462; border-radius: 8px; transition: all 0.2s; white-space: nowrap;
         }
-        .header-phone:hover {
-            background: #44a359;
-            transform: translateY(-2px);
-        }
+        .header-phone:hover { background: #44a359; transform: translateY(-2px); }
 
+        /* ===== ГЕРОЙ ===== */
         .hero {
             background: linear-gradient(rgba(51,36,0,0.65), rgba(0,0,0,0.65)),
                         url('https://thb.tildacdn.pub/tild3762-6461-4365-b933-663033393239/-/resize/1200x/1775466348.png') center/cover no-repeat;
             min-height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            padding: 120px 20px 80px;
-            border-radius: 20px;
-            margin: 20px;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; color: #fff;
+            padding: 120px 20px 80px; border-radius: 20px; margin: 20px;
         }
-        .hero h1 {
-            font-size: 2.4rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 35px;
-            opacity: 0.95;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        .hero h1 { font-size: 2.4rem; font-weight: 800; margin-bottom: 20px; line-height: 1.2; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.2rem; margin-bottom: 35px; opacity: 0.95; max-width: 700px; margin-left: auto; margin-right: auto; }
 
+        /* ===== ЦЕНЫ ===== */
         .prices-list {
-            max-width: 750px;
-            margin: 0 auto 40px;
-            text-align: center;
-            background: rgba(255,255,255,0.05);
-            padding: 35px;
-            border-radius: 12px;
+            max-width: 750px; margin: 0 auto 40px; text-align: center;
+            background: rgba(255,255,255,0.05); padding: 35px; border-radius: 12px;
         }
         .prices-list p { margin: 10px 0; font-size: 1.05rem; }
         .prices-list strong { color: #4bb462; font-weight: 700; }
         .price-note { font-size: 0.9rem; opacity: 0.7; margin-top: 20px; font-style: italic; }
 
-        .advantages {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-            margin-top: 50px;
-        }
+        /* ===== ПРЕИМУЩЕСТВА ===== */
+        .advantages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-top: 50px; }
         .advantage {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 30px 20px;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s;
+            display: flex; flex-direction: column; align-items: center; text-align: center;
+            padding: 30px 20px; background: #fff; border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: all 0.3s;
         }
-        .advantage:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-        }
-        .advantage-icon {
-            width: 64px;
-            height: 64px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #4bb462;
-        }
+        .advantage:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+        .advantage-icon { width: 64px; height: 64px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: #4bb462; }
         .advantage-icon svg { width: 100%; height: 100%; fill: currentColor; }
-        .advantage h3 { 
-            margin-bottom: 12px; 
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #292929;
-        }
+        .advantage h3 { margin-bottom: 12px; font-size: 1.15rem; font-weight: 700; color: #292929; }
         .advantage p { font-size: 0.9rem; color: #666; line-height: 1.5; }
 
-        .contacts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-            margin-top: 50px;
-        }
+        /* ===== КОНТАКТЫ ===== */
+        .contacts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; margin-top: 50px; }
         .contact-info h3 { margin-bottom: 20px; font-size: 1.5rem; font-weight: 700; }
         .contact-info p { margin: 12px 0; font-size: 1rem; }
         .contact-info a { color: #4bb462; font-weight: 600; }
         .contact-info a:hover { text-decoration: underline; }
-        .company-info {
-            margin-top: 25px;
-            padding-top: 25px;
-            border-top: 1px solid rgba(255,255,255,0.2);
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
+        .company-info { margin-top: 25px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.9rem; opacity: 0.8; }
         .social-links { display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
         .social-link {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: #4bb462;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #000;
-            transition: all 0.2s;
+            width: 45px; height: 45px; border-radius: 50%; background: #4bb462;
+            display: flex; align-items: center; justify-content: center; color: #000; transition: all 0.2s;
         }
-        .social-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(75, 180, 98, 0.4);
-        }
+        .social-link:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(75, 180, 98, 0.4); }
         .social-link svg { width: 22px; height: 22px; fill: #000; }
 
-        .map-container {
+        /* ===== КАРТА 2GIS (простой контейнер без ограничений) ===== */
+        .dg-map-container {
+            width: 500px;
+            height: 400px;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            height: 450px;
-            background: #3a3a3a;
+            background: #fff;
         }
 
+        /* ===== МЕССЕНДЖЕРЫ ===== */
         .messengers { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 35px; }
         .btn-messenger {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 28px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: all 0.2s;
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 1rem; transition: all 0.2s;
         }
-        .btn-messenger:hover { 
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-        }
+        .btn-messenger:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
         .btn-phone { background: #4bb462; color: #000; }
 
+        /* ===== ПЛАВАЮЩАЯ КНОПКА ===== */
         .floating-btn {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: #4bb462;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #000;
+            position: fixed; bottom: 25px; right: 25px;
+            width: 60px; height: 60px; border-radius: 50%; background: #4bb462;
+            display: flex; align-items: center; justify-content: center; color: #000;
             box-shadow: 0 4px 20px rgba(75, 180, 98, 0.5);
-            z-index: 999;
-            animation: pulse 2s infinite;
-            transition: all 0.3s;
+            z-index: 9999; animation: pulse 2s infinite; transition: all 0.3s;
         }
-        .floating-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(75, 180, 98, 0.6);
-        }
+        .floating-btn:hover { transform: scale(1.1); box-shadow: 0 6px 25px rgba(75, 180, 98, 0.6); }
         .floating-btn svg { width: 28px; height: 28px; fill: #000; }
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(75, 180, 98, 0.5); }
@@ -271,23 +167,12 @@
             100% { box-shadow: 0 0 0 0 rgba(75, 180, 98, 0); }
         }
 
-        footer {
-            background: #1a1a1a;
-            color: rgba(255,255,255,0.6);
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 0.9rem;
-        }
+        footer { background: #1a1a1a; color: rgba(255,255,255,0.6); text-align: center; padding: 30px 20px; font-size: 0.9rem; }
 
-        @media (max-width: 968px) {
-            .advantages { grid-template-columns: repeat(2, 1fr); }
-        }
+        /* ===== АДАПТИВНОСТЬ ===== */
+        @media (max-width: 968px) { .advantages { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 768px) {
-            .hero { 
-                margin: 10px; 
-                border-radius: 15px;
-                padding: 100px 20px 60px;
-            }
+            .hero { margin: 10px; border-radius: 15px; padding: 100px 20px 60px; }
             .hero h1 { font-size: 1.7rem; }
             .hero p { font-size: 1rem; }
             .section { padding: 60px 0; }
@@ -295,6 +180,7 @@
             .header-inner { justify-content: center; text-align: center; }
             .logo-wrapper { align-items: center; }
             .contacts-grid { gap: 40px; }
+            .dg-map-container { width: 100%; max-width: 500px; height: 400px; }
             .floating-btn { width: 55px; height: 55px; bottom: 20px; right: 20px; }
         }
         @media (max-width: 480px) {
@@ -303,6 +189,7 @@
             .prices-list { padding: 20px; }
             .logo { font-size: 1.2rem; }
             .logo-tagline { font-size: 0.75rem; }
+            .dg-map-container { height: 350px; }
         }
     </style>
 </head>
@@ -442,31 +329,12 @@
                         </a>
                     </div>
                 </div>
-                <div class="contact-map">
-                    <!-- Виджет 2ГИС -->
-                    <div class="map-container" id="dg-map">
-                        <noscript style="color:#c00;font-size:16px;font-weight:bold;text-align:center;padding:20px;">
-                            Виджет карты использует JavaScript. Включите его в настройках вашего браузера.
-                        </noscript>
-                    </div>
-                    
-                    <a class="dg-widget-link" href="http://2gis.ru/irkutsk/firm/70000001031715302/center/104.20652389526369,52.275654757859385/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Иркутска</a>
-                    <div class="dg-widget-link"><a href="http://2gis.ru/irkutsk/firm/70000001031715302/photos/70000001031715302/center/104.20652389526369,52.275654757859385/zoom/17?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=photos">Фотографии компании</a></div>
-                    <div class="dg-widget-link"><a href="http://2gis.ru/irkutsk/center/104.206589,52.27386/zoom/16/routeTab/rsType/bus/to/104.206589,52.27386╎Евробетон, завод по производству бетонно-растворных смесей?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до Евробетон, завод по производству бетонно-растворных смесей</a></div>
-                    
-                    <script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script>
-                    <script charset="utf-8">
-                        new DGWidgetLoader({
-                            "width":"100%",
-                            "height":"100%",
-                            "borderColor":"#a3a3a3",
-                            "pos":{"lat":52.275654757859385,"lon":104.20652389526369,"zoom":16},
-                            "opt":{"city":"irkutsk"},
-                            "org":[{"id":"70000001031715302"}],
-                            "container": "dg-map"
-                        });
-                    </script>
+                
+                <!-- КАРТА 2GIS (ТВОЙ ВИДЖЕТ БЕЗ ИЗМЕНЕНИЙ) -->
+                <div class="dg-map-container">
+                    <a class="dg-widget-link" href="http://2gis.ru/irkutsk/firm/70000001031715302/center/104.20652389526369,52.275654757859385/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Иркутска</a><div class="dg-widget-link"><a href="http://2gis.ru/irkutsk/firm/70000001031715302/photos/70000001031715302/center/104.20652389526369,52.275654757859385/zoom/17?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=photos">Фотографии компании</a></div><div class="dg-widget-link"><a href="http://2gis.ru/irkutsk/center/104.206589,52.27386/zoom/16/routeTab/rsType/bus/to/104.206589,52.27386╎Евробетон, завод по производству бетонно-растворных смесей?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до Евробетон, завод по производству бетонно-растворных смесей</a></div><script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script><script charset="utf-8">new DGWidgetLoader({"width":500,"height":400,"borderColor":"#a3a3a3","pos":{"lat":52.275654757859385,"lon":104.20652389526369,"zoom":16},"opt":{"city":"irkutsk"},"org":[{"id":"70000001031715302"}]});</script><noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
                 </div>
+
             </div>
         </div>
     </section>

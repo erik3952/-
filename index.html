@@ -60,7 +60,7 @@
         header {
             background: #292929;
             color: #fff;
-            padding: 12px 0;
+            padding: 10px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -80,8 +80,8 @@
             gap: 15px; 
         }
         .logo-header-img {
-            width: 80px;
-            height: 80px;
+            width: 150px; /* Увеличено в 2 раза */
+            height: 150px;
             object-fit: contain;
         }
         .logo { 
@@ -100,7 +100,7 @@
         .header-phone {
             color: #000; 
             font-weight: 700; 
-            padding: 10px 20px;
+            padding: 12px 24px;
             background: #4bb462; 
             border-radius: 8px; 
             transition: all 0.2s; 
@@ -113,12 +113,12 @@
 
         /* ===== ГЕРОЙ ===== */
         .hero {
-            background-color: #292929;
-            background-image: linear-gradient(rgba(51,36,0,0.65), rgba(0,0,0,0.65)), url('g-hero.png');
+            background-color: #1a1a1a;
+            background-image: linear-gradient(rgba(51,36,0,0.7), rgba(0,0,0,0.7)), url('g-hero.png?v=2');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed;
+            background-attachment: scroll; /* Убрано fixed для стабильности на iOS */
             min-height: 85vh;
             display: flex; 
             align-items: center; 
@@ -221,7 +221,34 @@
 
         /* ===== АДАПТИВНОСТЬ ===== */
         @media (max-width: 968px) { .advantages { grid-template-columns: repeat(2, 1fr); } }
+        
         @media (max-width: 768px) {
+            /* Шапка на планшете/мобильном: симметричная, по центру */
+            .header-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+                padding: 8px 0;
+            }
+            .logo-wrapper {
+                flex-direction: row; /* Лого и текст остаются в ряд */
+                justify-content: center;
+                align-items: center;
+                gap: 12px;
+                width: 100%;
+            }
+            .logo-header-img {
+                width: 100px;
+                height: 100px;
+            }
+            .header-phone {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+                justify-content: center;
+                margin: 0 auto;
+            }
+
             .hero { 
                 margin: 10px; 
                 border-radius: 15px; 
@@ -232,19 +259,11 @@
             .hero p { font-size: 1rem; }
             .section { padding: 60px 0; }
             .prices-list { padding: 25px; font-size: 0.95rem; }
-            .header-inner { justify-content: center; text-align: center; }
-            .logo-wrapper { 
-                flex-direction: column; 
-                align-items: center; 
-            }
-            .logo-header-img {
-                width: 100px;
-                height: 100px;
-            }
             .contacts-grid { gap: 40px; }
             .dg-map-container { width: 100%; max-width: 500px; height: 400px; }
             .floating-btn { width: 55px; height: 55px; bottom: 20px; right: 20px; }
         }
+        
         @media (max-width: 480px) {
             .hero h1 { font-size: 1.5rem; }
             .btn { padding: 14px 24px; }
@@ -253,8 +272,8 @@
             .logo-tagline { font-size: 0.75rem; }
             .dg-map-container { height: 350px; }
             .logo-header-img {
-                width: 90px;
-                height: 90px;
+                width: 80px;
+                height: 80px;
             }
         }
     </style>
@@ -264,7 +283,6 @@
     <header>
         <div class="container header-inner">
             <div class="logo-wrapper">
-                <!-- Логотип слева -->
                 <img src="logo-header.png" alt="Евробетон" class="logo-header-img">
                 <div>
                     <div class="logo">ООО «Евро<span>бетон</span>»</div>
@@ -360,7 +378,6 @@
                 </div>
                 <div class="advantage">
                     <div class="advantage-icon">
-                        <!-- Иконка завода для "Свой автопарк" -->
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 506.43 506.43">
                             <g>
                                 <path d="m3.45 194.553 74.886 55.885c1.927 1.438 4.691.278 5.014-2.105l21.095-155.543c.324-2.392-2.047-4.248-4.29-3.357l-86.665 34.37c-2.53 1-4.3 3.21-4.67 5.79l-8.26 58.19c-.37 2.59.73 5.17 2.89 6.77z" fill="currentColor"/>
@@ -408,11 +425,9 @@
                     </div>
                 </div>
                 
-                <!-- КАРТА 2GIS -->
                 <div class="dg-map-container">
                     <a class="dg-widget-link" href="http://2gis.ru/irkutsk/firm/70000001031715302/center/104.20652389526369,52.275654757859385/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Иркутска</a><div class="dg-widget-link"><a href="http://2gis.ru/irkutsk/firm/70000001031715302/photos/70000001031715302/center/104.20652389526369,52.275654757859385/zoom/17?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=photos">Фотографии компании</a></div><div class="dg-widget-link"><a href="http://2gis.ru/irkutsk/center/104.206589,52.27386/zoom/16/routeTab/rsType/bus/to/104.206589,52.27386╎Евробетон, завод по производству бетонно-растворных смесей?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до Евробетон, завод по производству бетонно-растворных смесей</a></div><script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script><script charset="utf-8">new DGWidgetLoader({"width":500,"height":400,"borderColor":"#a3a3a3","pos":{"lat":52.275654757859385,"lon":104.20652389526369,"zoom":16},"opt":{"city":"irkutsk"},"org":[{"id":"70000001031715302"}]});</script><noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
                 </div>
-
             </div>
         </div>
     </section>
